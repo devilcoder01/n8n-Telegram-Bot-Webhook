@@ -1,4 +1,4 @@
-# Telegram Bot Webhook
+# Telegram Bot Webhook for n8n
 
 A FastAPI application that connects Telegram Bot messages with n8n workflows.
 
