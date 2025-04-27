@@ -1,5 +1,7 @@
 # Telegram Bot Webhook for n8n
 
+> **Disclaimer**: This application is designed to work exclusively with Telegram bots. It does not support Telegram channels or other Telegram triggers.
+
 A FastAPI application that connects Telegram Bot messages with n8n workflows.
 
 ## Features
@@ -65,13 +67,9 @@ Steps to set up a static `ngrok_url`:
 3. create a custom subdomain (e.g., `your-app-name.ngrok.io`).
 4. Update the `NGROK_URL` in your `.env` file with the reserved domain.
 
-This approach ensures a consistent webhook URL and simplifies the development workflow.
-## Project Structure
+## Integrating with n8n
 
-```
-Telegram_Bot_Webhook/
-├─ main.py            # FastAPI app & webhook logic
-├─ .env               # Environment variables
-├─ requirements.txt   # Dependencies
-├─ start.ps1          # PowerShell script
-└─ run.bat            # CMD script
+To connect this application with n8n, use the Webhook Trigger node instead of the Telegram Trigger node. Configure the webhook path to `/telegram` (or any custom path of your choice). If you choose a custom path, ensure that the same path is updated in the `.env` file. Additionally, set the "Respond with" option in the Webhook Trigger node to "First Entry JSON" for proper functionality.
+
+
+
